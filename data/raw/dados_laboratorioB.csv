@@ -1,0 +1,5 @@
+id_exame,nome,cpf,idade,sexo,tipo_exame,data,teste,valor,unidade,referencia
+csv_1,João Silva,123.456.789-01,35,Masculino,Hemograma Completo,2023-10-15,hemoglobina,14.5,g/dL,13.0 - 17.0
+csv_1,João Silva,123.456.789-01,35,Masculino,Hemograma Completo,2023-10-15,leucocitos,6500,células/μL,4000 - 11000
+csv_2,Maria Oliveira,987.654.321-09,28,Feminino,Glicemia em Jejum,2023-10-16,glicose,92,mg/dL,70 - 99
+csv_3,João Silva,123.456.789-01,35,Masculino,Colesterol Total,2023-10-17,colesterol,190,mg/dL,< 200

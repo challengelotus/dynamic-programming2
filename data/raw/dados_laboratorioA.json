@@ -1,0 +1,409 @@
+{
+  "exames": [
+    {
+      "id_exame": "json_1",
+      "paciente": {
+        "nome": "João Silva",
+        "cpf": "123.456.789-01",
+        "idade": 35,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Hemograma Completo",
+        "data": "2023-10-15",
+        "resultados": {
+          "hemoglobina": {
+            "valor": 14.5,
+            "unidade": "g/dL",
+            "referencia": "13.0 - 17.0"
+          },
+          "leucocitos": {
+            "valor": 6500,
+            "unidade": "células/μL",
+            "referencia": "4000 - 11000"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_2",
+      "paciente": {
+        "nome": "Maria Oliveira",
+        "cpf": "987.654.321-09",
+        "idade": 28,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Glicemia em Jejum",
+        "data": "2023-10-16",
+        "resultados": {
+          "glicose": {
+            "valor": 92,
+            "unidade": "mg/dL",
+            "referencia": "70 - 99"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_3",
+      "paciente": {
+        "nome": "João Silva",
+        "cpf": "123.456.789-01",
+        "idade": 35,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Colesterol Total",
+        "data": "2023-10-17",
+        "resultados": {
+          "colesterol": {
+            "valor": 190,
+            "unidade": "mg/dL",
+            "referencia": "< 200"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_4",
+      "paciente": {
+        "nome": "Ana Souza",
+        "cpf": "111.222.333-44",
+        "idade": 42,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "TSH",
+        "data": "2023-10-18",
+        "resultados": {
+          "tsh": {
+            "valor": 2.5,
+            "unidade": "mIU/L",
+            "referencia": "0.4 - 4.0"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_5",
+      "paciente": {
+        "nome": "Carlos Ferreira",
+        "cpf": "555.666.777-88",
+        "idade": 50,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Creatinina",
+        "data": "2023-10-19",
+        "resultados": {
+          "creatinina": {
+            "valor": 1.1,
+            "unidade": "mg/dL",
+            "referencia": "0.7 - 1.3"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_6",
+      "paciente": {
+        "nome": "Maria Oliveira",
+        "cpf": "987.654.321-09",
+        "idade": 28,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Ácido Úrico",
+        "data": "2023-10-20",
+        "resultados": {
+          "acido_urico": {
+            "valor": 5.2,
+            "unidade": "mg/dL",
+            "referencia": "2.5 - 7.0"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_7",
+      "paciente": {
+        "nome": "João Silva",
+        "cpf": "123.456.789-01",
+        "idade": 35,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "TGO (AST)",
+        "data": "2023-10-21",
+        "resultados": {
+          "tgo": {
+            "valor": 25,
+            "unidade": "U/L",
+            "referencia": "10 - 40"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_8",
+      "paciente": {
+        "nome": "Ana Souza",
+        "cpf": "111.222.333-44",
+        "idade": 42,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "TGP (ALT)",
+        "data": "2023-10-22",
+        "resultados": {
+          "tgp": {
+            "valor": 30,
+            "unidade": "U/L",
+            "referencia": "7 - 56"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_9",
+      "paciente": {
+        "nome": "Pedro Santos",
+        "cpf": "999.888.777-66",
+        "idade": 60,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Ferro Sérico",
+        "data": "2023-10-23",
+        "resultados": {
+          "ferro": {
+            "valor": 85,
+            "unidade": "μg/dL",
+            "referencia": "65 - 175"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_10",
+      "paciente": {
+        "nome": "Fernanda Lima",
+        "cpf": "444.555.666-77",
+        "idade": 29,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Vitamina D",
+        "data": "2023-10-24",
+        "resultados": {
+          "vitamina_d": {
+            "valor": 32,
+            "unidade": "ng/mL",
+            "referencia": "30 - 100"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_11",
+      "paciente": {
+        "nome": "Carlos Ferreira",
+        "cpf": "555.666.777-88",
+        "idade": 50,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "PCR",
+        "data": "2023-10-25",
+        "resultados": {
+          "pcr": {
+            "valor": 0.8,
+            "unidade": "mg/L",
+            "referencia": "< 5.0"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_12",
+      "paciente": {
+        "nome": "Maria Oliveira",
+        "cpf": "987.654.321-09",
+        "idade": 28,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Triglicerídeos",
+        "data": "2023-10-26",
+        "resultados": {
+          "triglicerideos": {
+            "valor": 150,
+            "unidade": "mg/dL",
+            "referencia": "< 150"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_13",
+      "paciente": {
+        "nome": "João Silva",
+        "cpf": "123.456.789-01",
+        "idade": 35,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "HDL",
+        "data": "2023-10-27",
+        "resultados": {
+          "hdl": {
+            "valor": 45,
+            "unidade": "mg/dL",
+            "referencia": "> 40"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_14",
+      "paciente": {
+        "nome": "Ana Souza",
+        "cpf": "111.222.333-44",
+        "idade": 42,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "LDL",
+        "data": "2023-10-28",
+        "resultados": {
+          "ldl": {
+            "valor": 110,
+            "unidade": "mg/dL",
+            "referencia": "< 130"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_15",
+      "paciente": {
+        "nome": "Pedro Santos",
+        "cpf": "999.888.777-66",
+        "idade": 60,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Proteína C Reativa",
+        "data": "2023-10-29",
+        "resultados": {
+          "pcr": {
+            "valor": 3.2,
+            "unidade": "mg/L",
+            "referencia": "< 5.0"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_16",
+      "paciente": {
+        "nome": "Fernanda Lima",
+        "cpf": "444.555.666-77",
+        "idade": 29,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Albumina",
+        "data": "2023-10-30",
+        "resultados": {
+          "albumina": {
+            "valor": 4.0,
+            "unidade": "g/dL",
+            "referencia": "3.5 - 5.0"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_17",
+      "paciente": {
+        "nome": "Carlos Ferreira",
+        "cpf": "555.666.777-88",
+        "idade": 50,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Bilirrubina Total",
+        "data": "2023-10-31",
+        "resultados": {
+          "bilirrubina": {
+            "valor": 0.9,
+            "unidade": "mg/dL",
+            "referencia": "0.2 - 1.2"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_18",
+      "paciente": {
+        "nome": "Maria Oliveira",
+        "cpf": "987.654.321-09",
+        "idade": 28,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Fosfatase Alcalina",
+        "data": "2023-11-01",
+        "resultados": {
+          "fosfatase": {
+            "valor": 85,
+            "unidade": "U/L",
+            "referencia": "40 - 150"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_19",
+      "paciente": {
+        "nome": "João Silva",
+        "cpf": "123.456.789-01",
+        "idade": 35,
+        "sexo": "Masculino"
+      },
+      "exame": {
+        "tipo": "Amilase",
+        "data": "2023-11-02",
+        "resultados": {
+          "amilase": {
+            "valor": 70,
+            "unidade": "U/L",
+            "referencia": "30 - 110"
+          }
+        }
+      }
+    },
+    {
+      "id_exame": "json_20",
+      "paciente": {
+        "nome": "Ana Souza",
+        "cpf": "111.222.333-44",
+        "idade": 42,
+        "sexo": "Feminino"
+      },
+      "exame": {
+        "tipo": "Lipase",
+        "data": "2023-11-03",
+        "resultados": {
+          "lipase": {
+            "valor": 45,
+            "unidade": "U/L",
+            "referencia": "13 - 60"
+          }
+        }
+      }
+    }
+  ]
+}
