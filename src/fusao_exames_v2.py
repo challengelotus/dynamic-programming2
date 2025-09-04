@@ -3,12 +3,15 @@ from processamento_dados_v2 import Dados
 path_json = 'data/raw/dados_laboratorioA.json'
 path_csv = 'data/raw/dados_laboratorioB.csv'
 
-
 # Extract
 dados_empresaA = Dados.leitura_dados(path_json, 'json')
-print(f'Dados da Empresa A: {dados_empresaA}')
+dados_empresaA.printar_dados()
+print(f'Nomes colunas (Empresa A | JSON): {dados_empresaA.nome_colunas}')
+print(f'Quantidade de colunas (Empresa A | JSON): {dados_empresaA.qtd_linhas}')
 
-print('')
+print('-'*118)
 
 dados_empresaB = Dados.leitura_dados(path_csv, 'csv')
-print(f'Dados da Empresa B: {dados_empresaB}')
+dados_empresaB.printar_dados()
+print(f'Nomes colunas (Empresa B | CSV): {dados_empresaB.nome_colunas}')
+print(f'Quantidade de colunas (Empresa B | CSV): {dados_empresaB.qtd_linhas}')
