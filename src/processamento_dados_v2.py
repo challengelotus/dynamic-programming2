@@ -2,6 +2,8 @@ import json
 import csv
 
 class Dados:
+    def __init__(self, dados):
+        self.dados = dados
     
     @staticmethod
     def leitura_json(path):
