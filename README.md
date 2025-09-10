@@ -1,5 +1,7 @@
 # 🧪 Projeto de Fusão e Ordenação de Exames
 
+![Link do projeto no GitHub](https://github.com/challengelotus/dynamic-programming2)
+
 Este projeto tem como objetivo **ler, transformar, combinar e ordenar dados de exames laboratoriais** provenientes de diferentes fontes (JSON e CSV).
 Além disso, foram implementados algoritmos fundamentais de **ordenação, busca, fila e pilha** para consolidar conceitos de **Estruturas de Dados**.
 
@@ -45,7 +47,7 @@ Além disso, foram implementados algoritmos fundamentais de **ordenação, busca
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/jaoAprendiz/projeto-exames.git
+   git clone https://github.com/jaoAprendiz/dynamic-programming2.git
    cd projeto-exames/src
    ```
 
