@@ -82,4 +82,4 @@ while pilha_exames:
 # -------------------------------
 path_dados_combinados = 'data/processed/dados_laboratorios.json'
 dados_fusao.salvar_dados_json(path_dados_combinados)
-print(f'Caminho dos dados de fusão: {path_dados_combinados}')
+print(f'\nCaminho dos dados de fusão: {path_dados_combinados}')
