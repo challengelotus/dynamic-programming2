@@ -134,6 +134,39 @@ class Dados:
                 fim = meio - 1
 
         return exames_paciente  # Retorna lista vazia se não encontrar
+    
+    # --------------------------
+    # FILA (FIFO)
+    # --------------------------
+    def criar_fila_exames(self):
+        """Cria uma fila em ordem cronológica de chegada dos exames"""
+        fila = []
+        for exame in self.dados:
+            fila.append(exame)  # enfileirar
+        return fila
+    
+    def desenfileirar(self, fila):
+        """Remove o exame mais antigo da fila"""
+        if len(fila) == 0:
+            return None
+        return fila.pop(0)  # remove o primeiro (mais antigo)
+    
+
+    # --------------------------
+    # PILHA (LIFO)
+    # --------------------------
+    def criar_pilha_exames(self):
+        """Cria uma pilha em ordem inversa (últimos exames primeiro)"""
+        pilha = []
+        for exame in self.dados:
+            pilha.append(exame)  # empilhar
+        return pilha
+    
+    def desempilhar(self, pilha):
+        """Remove o último exame adicionado à pilha"""
+        if len(pilha) == 0:
+            return None
+        return pilha.pop()  # remove o último
 
     def salvar_dados_json(self, path):
         with open(path, 'w', encoding='utf-8') as file:

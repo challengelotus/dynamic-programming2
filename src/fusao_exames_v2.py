@@ -53,6 +53,30 @@ print(f'Exames encontrados para {paciente_alvo}: {len(exames_paciente)}')
 for exame in exames_paciente:
     print(f"- {exame['exame']['tipo']} em {exame['exame']['data']}")
 
+# Criando fila (ordem cronológica)
+fila_exames = dados_fusao.criar_fila_exames()
+print("\nFila de exames (ordem cronológica):")
+for e in fila_exames[:5]:
+    print(f"{e['paciente']['nome']} - {e['exame']['tipo']}")
+
+# Retirando da fila (FIFO)
+print("\nDesenfileirando (FIFO):")
+while fila_exames:
+    exame = dados_fusao.desenfileirar(fila_exames)
+    print(f"Saiu da fila: {exame['paciente']['nome']} - {exame['exame']['tipo']}")
+
+# Criando pilha (ordem inversa)
+pilha_exames = dados_fusao.criar_pilha_exames()
+print("\nPilha de exames (últimos primeiro):")
+for e in pilha_exames[:5]:
+    print(f"{e['paciente']['nome']} - {e['exame']['tipo']}")
+
+# Retirando da pilha (LIFO)
+print("\nDesempilhando (LIFO):")
+while pilha_exames:
+    exame = dados_fusao.desempilhar(pilha_exames)
+    print(f"Saiu da pilha: {exame['paciente']['nome']} - {exame['exame']['tipo']}")
+
 # -------------------------------
 # LOAD
 # -------------------------------
