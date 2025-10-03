@@ -14,8 +14,8 @@ dynamic-programming2/
 │   └── processed/         # Saída processada em JSON
 │
 ├── src/
-│   ├── fusao_exames_v2.py          # Script principal (ETL + testes dos algoritmos)
-│   ├── processamento_dados_v2.py   # Classes de manipulação de exames e algoritmos
+│   ├── fusao_exames.py          # Script principal (ETL + testes dos algoritmos)
+│   ├── processamento_dados.py   # Classes de manipulação de exames e algoritmos
 │
 └── README.md
 ```
