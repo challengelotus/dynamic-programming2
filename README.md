@@ -12,8 +12,8 @@ Além disso, foram implementados algoritmos fundamentais de **ordenação, busca
 ```
 .
 ├── src/
-│   ├── fusao_exames_v2.py          # Script principal (ETL + ordenação + buscas + fila + pilha)
-│   ├── processamento_dados_v2.py   # Classe Dados (métodos de manipulação)
+│   ├── fusao_exames.py          # Script principal (ETL + ordenação + buscas + fila + pilha)
+│   ├── processamento_dados.py   # Classe Dados (métodos de manipulação)
 ├── data/
 │   ├── raw/                        # Dados brutos (JSON e CSV de entrada)
 │   ├── processed/                  # Dados processados (JSON de saída)
