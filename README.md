@@ -1,152 +1,155 @@
-# 🧪 Projeto de Fusão e Ordenação de Exames
+# 📊 Projeto Dynamic Programming - Gestão de Exames e Insumos
 
-![Link do projeto no GitHub](https://github.com/challengelotus/dynamic-programming2)
-
-Este projeto tem como objetivo **ler, transformar, combinar e ordenar dados de exames laboratoriais** provenientes de diferentes fontes (JSON e CSV).
-Além disso, foram implementados algoritmos fundamentais de **ordenação, busca, fila e pilha** para consolidar conceitos de **Estruturas de Dados**.
+Este projeto faz parte de um trabalho acadêmico e tem como objetivo aplicar **estruturas de dados** e **algoritmos clássicos** para manipulação de exames laboratoriais, além de introduzir **Programação Dinâmica** como ferramenta para otimização do consumo de insumos em laboratórios de diagnóstico.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🚀 Estrutura do Projeto
 
 ```
-.
-├── src/
-│   ├── fusao_exames_v2.py          # Script principal (ETL + ordenação + buscas + fila + pilha)
-│   ├── processamento_dados_v2.py   # Classe Dados (métodos de manipulação)
+dynamic-programming2/
+│
 ├── data/
-│   ├── raw/                        # Dados brutos (JSON e CSV de entrada)
-│   ├── processed/                  # Dados processados (JSON de saída)
+│   ├── raw/               # Dados brutos (CSV e JSON)
+│   └── processed/         # Saída processada em JSON
+│
+├── src/
+│   ├── fusao_exames_v2.py          # Script principal (ETL + testes dos algoritmos)
+│   ├── processamento_dados_v2.py   # Classes de manipulação de exames e algoritmos
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Funcionalidades
+## 🏗️ Funcionalidades Implementadas
 
-* **Extract (E):**
+### **1. Leitura e Fusão de Dados**
+- Leitura de arquivos **JSON** e **CSV**
+- Conversão automática de CSV → JSON padronizado
+- Fusão de dados entre diferentes laboratórios
 
-  * Leitura de arquivos JSON e CSV.
-  * Conversão do CSV para formato padronizado JSON-like.
+### **2. Estruturas de Dados**
+- **Fila (FIFO):** exames em ordem cronológica
+- **Pilha (LIFO):** exames em ordem inversa
 
-* **Transform (T):**
+### **3. Algoritmos**
+- **Ordenação (QuickSort):** por nome de paciente  
+- **Busca Sequencial:** percorre todos os exames  
+- **Busca Binária:** eficiente após ordenação  
 
-  * Fusão de dados entre diferentes laboratórios.
-  * Ordenação alfabética dos pacientes via **Quick Sort**.
-  * Busca sequencial e busca binária por paciente.
-  * Estrutura de **Fila (FIFO)** para ordem cronológica dos exames.
-  * Estrutura de **Pilha (LIFO)** para simulação de últimos exames primeiro.
+### **4. Programação Dinâmica (Sprint 4)**
+Modelagem de problema de otimização do **uso de insumos laboratoriais**:
+- Cada exame consome determinada quantidade de insumos.
+- O estoque de insumos por dia é limitado.
+- O objetivo é **maximizar o número de exames realizados sem ultrapassar o estoque**.
 
-* **Load (L):**
+**Implementações:**
+1. **Versão Recursiva** (top-down ingênua)  
+2. **Versão com Memorização** (top-down otimizada)  
+3. **Versão Iterativa** (bottom-up, tabulação)  
 
-  * Salvamento do conjunto unificado em `data/processed/`.
-
----
-
-## 🚀 Como Executar
-
-1. Clone este repositório:
-
-   ```bash
-   git clone https://github.com/jaoAprendiz/dynamic-programming2.git
-   cd projeto-exames/src
-   ```
-
-2. Execute o script principal:
-
-   ```bash
-   python fusao_exames_v2.py
-   ```
-
-3. O resultado processado estará disponível em:
-
-   ```
-   data/processed/dados_laboratorios.json
-   ```
+Todas as versões retornam o **mesmo resultado ótimo**, provando a consistência do modelo.
 
 ---
 
-## 📊 Exemplo de Saída (Quick Sort + Busca)
+## 🔎 Formulação do Problema em Programação Dinâmica
 
-```bash
+- **Estado:**  
+  `f(i, capacidade)` → melhor solução considerando os primeiros `i` exames com `capacidade` insumos restantes.  
+
+- **Decisão:**  
+  - Não realizar o exame `i`  
+  - Realizar o exame `i` (se houver insumos suficientes)  
+
+- **Função de transição:**  
+  ```
+  f(i, capacidade) = max(
+      f(i-1, capacidade),                          # não incluir exame i
+      valor[i] + f(i-1, capacidade - peso[i])      # incluir exame i
+  )
+  ```
+
+- **Função objetivo:**  
+  Maximizar o total de exames realizados respeitando a capacidade de insumos.
+
+---
+
+## 📈 Análise Algorítmica
+
+### QuickSort
+- Melhor caso: `O(n log n)`  
+- Pior caso: `O(n²)`  
+- Caso médio: `O(n log n)`  
+
+### Busca Sequencial
+- Tempo: `O(n)`  
+- Espaço: `O(1)`  
+
+### Busca Binária
+- Tempo: `O(log n)`  
+- Espaço: `O(1)` (iterativa)  
+
+### Fila e Pilha
+- Enfileirar / Empilhar: `O(1)`  
+- Desenfileirar: `O(n)` (lista Python, pois `pop(0)` desloca elementos)  
+- Desempilhar: `O(1)`  
+
+### Programação Dinâmica (Knapsack)
+- **Recursiva pura:** `O(2^n)` (ineficiente)  
+- **Com memorização:** `O(n * capacidade)`  
+- **Iterativa (Bottom-up):** `O(n * capacidade)`  
+
+---
+
+## ⚙️ Como Executar
+
+1. Clone o repositório:  
+   ```bash
+   git clone <repo_url>
+   cd dynamic-programming2
+   ```
+
+2. Estrutura esperada dos dados:
+   - `data/raw/dados_laboratorioA.json`
+   - `data/raw/dados_laboratorioB.csv`
+
+3. Execute o script principal:  
+   ```bash
+   python src/fusao_exames_v2.py
+   ```
+
+---
+
+## 📑 Exemplo de Saída
+
+```
+Total de exames após fusão: 220
+
 Antes de ordenar:
-Carlos Lima
-Beatriz Souza
+Carlos Mendes
 João Silva
-Ana Souza
-Pedro Alves
+Maria Oliveira
+...
 
 Depois de ordenar:
 Ana Souza
-Beatriz Souza
-Carlos Lima
+Carlos Mendes
 João Silva
-Pedro Alves
+...
 
 Exames encontrados para João Silva: 3
-- Hemograma em 2024-05-20
-- Colesterol em 2024-05-22
-- Glicemia em 2024-05-25
+- Hemograma em 2024-01-15
+- Colesterol em 2024-02-03
+...
+
+[Programação Dinâmica] Resultado ótimo:
+- Recursiva: 5
+- Memorizada: 5
+- Iterativa: 5
 ```
-
----
-
-## 🧮 Análise Algorítmica
-
-### 🔹 Quick Sort
-
-* **Descrição:** Ordena os pacientes por nome em ordem alfabética.
-* **Complexidade:**
-
-  * Melhor caso: **O(n log n)**
-  * Caso médio: **O(n log n)**
-  * Pior caso (lista já ordenada): **O(n²)**
-
----
-
-### 🔹 Busca Sequencial
-
-* **Descrição:** Percorre todos os exames até encontrar o paciente alvo.
-* **Complexidade:**
-
-  * Melhor caso: **O(1)** (primeiro elemento é o alvo)
-  * Pior caso: **O(n)**
-
----
-
-### 🔹 Busca Binária
-
-* **Descrição:** Aplica divisão e conquista sobre a lista já ordenada.
-* **Complexidade:**
-
-  * Melhor caso: **O(1)**
-  * Pior caso: **O(log n)**
-
-> ⚠️ Pré-requisito: a lista deve estar ordenada (por `quick_sort`).
-
----
-
-### 🔹 Estrutura de Fila (FIFO)
-
-* **Enfileirar (append):** **O(1)**
-* **Desenfileirar (pop(0)):** **O(n)** → pois desloca os elementos da lista.
-
----
-
-### 🔹 Estrutura de Pilha (LIFO)
-
-* **Empilhar (append):** **O(1)**
-* **Desempilhar (pop()):** **O(1)**
-
----
-
-## 🏗️ Possíveis Melhorias
-
-* Utilizar `collections.deque` para otimizar a **fila** (`O(1)` em enfileirar e desenfileirar).
-* Implementar ordenação estável (`merge sort`) para preservar ordem cronológica em caso de nomes iguais.
-* Criar interface gráfica ou API para visualização dos dados processados.
 
 ---
 
 ## 👨‍💻 Autor
-
 Projeto desenvolvido por **João Soave** como parte da disciplina de **Dynamic Programming** do curso de Engenharia de Software (FIAP).
