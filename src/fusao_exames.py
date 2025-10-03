@@ -1,4 +1,4 @@
-from processamento_dados_v2 import Dados
+from processamento_dados import Dados, Ordenacao, Busca, EstruturasLineares, ProgramacaoDinamica
 
 # Caminhos de entrada (dados brutos)
 path_json = 'data/raw/dados_laboratorioA.json'
@@ -22,60 +22,71 @@ print('-'*150)
 # -------------------------------
 # TRANSFORM
 # -------------------------------
-
 # Fusão dos dados
 dados_fusao = Dados.join(dados_empresaA, dados_empresaB)
 print(f'Total de exames após fusão: {dados_fusao.tamanho_dados}')
 
-# QUICK SORT
+# QUICK SORT (usando classe Ordenacao)
 print("Antes de ordenar:")
-for d in dados_fusao.dados[:5]:  # acessando o atributo .dados
+for d in dados_fusao.dados[:5]:
     print(d["paciente"]["nome"])
 
-# aplicar o quick sort
-dados_fusao.quick_sort()
+# aplicar o quick sort (retorna nova lista ordenada)
+dados_fusao.dados = Ordenacao.quick_sort(dados_fusao.dados)
 
 print("\nDepois de ordenar:")
 for d in dados_fusao.dados[:5]:
     print(d["paciente"]["nome"])
 
-# Busca sequencial
+# Busca sequencial (classe Busca)
 paciente_alvo = 'João Silva'
-exames_paciente = dados_fusao.buscar_sequencial(paciente_alvo)
+exames_paciente = Busca.buscar_sequencial(dados_fusao.dados, paciente_alvo)
 print(f'Exames encontrados para {paciente_alvo}: {len(exames_paciente)}')
 for exame in exames_paciente:
     print(f"- {exame['exame']['tipo']} em {exame['exame']['data']}")
 
-# Busca Binária
+# Busca Binária (requer dados ordenados)
 paciente_alvo = 'Ana Souza'
-exames_paciente = dados_fusao.busca_binaria_paciente(paciente_alvo)
+exames_paciente = Busca.busca_binaria(dados_fusao.dados, paciente_alvo)
 print(f'Exames encontrados para {paciente_alvo}: {len(exames_paciente)}')
 for exame in exames_paciente:
     print(f"- {exame['exame']['tipo']} em {exame['exame']['data']}")
 
-# Criando fila (ordem cronológica)
-fila_exames = dados_fusao.criar_fila_exames()
+# -------------------------------
+# FILA / PILHA (EstruturasLineares)
+# -------------------------------
+fila_exames = EstruturasLineares.criar_fila(dados_fusao.dados)
 print("\nFila de exames (ordem cronológica):")
 for e in fila_exames[:5]:
     print(f"{e['paciente']['nome']} - {e['exame']['tipo']}")
 
-# Retirando da fila (FIFO)
 print("\nDesenfileirando (FIFO):")
 while fila_exames:
-    exame = dados_fusao.desenfileirar(fila_exames)
+    exame = EstruturasLineares.desenfileirar(fila_exames)
     print(f"Saiu da fila: {exame['paciente']['nome']} - {exame['exame']['tipo']}")
 
-# Criando pilha (ordem inversa)
-pilha_exames = dados_fusao.criar_pilha_exames()
+pilha_exames = EstruturasLineares.criar_pilha(dados_fusao.dados)
 print("\nPilha de exames (últimos primeiro):")
 for e in pilha_exames[:5]:
     print(f"{e['paciente']['nome']} - {e['exame']['tipo']}")
 
-# Retirando da pilha (LIFO)
 print("\nDesempilhando (LIFO):")
 while pilha_exames:
-    exame = dados_fusao.desempilhar(pilha_exames)
+    exame = EstruturasLineares.desempilhar(pilha_exames)
     print(f"Saiu da pilha: {exame['paciente']['nome']} - {exame['exame']['tipo']}")
+
+# -------------------------------
+# PROGRAMACAO DINAMICA (Sprint 4)
+# -------------------------------
+# exemplo didático: consumos (unidades) por exame e capacidade diária
+insumos = [2, 3, 4, 5]  # consumo por exame (exemplo)
+capacidade = 5
+n = len(insumos)
+
+print("\n--- Programação Dinâmica (exemplo Knapsack) ---")
+print("Versão Recursiva:", ProgramacaoDinamica.consumo_recursivo(insumos, capacidade, n))
+print("Versão Memoization:", ProgramacaoDinamica.consumo_memoization(insumos, capacidade, n, {}))
+print("Versão Bottom-Up:", ProgramacaoDinamica.consumo_bottom_up(insumos, capacidade))
 
 # -------------------------------
 # LOAD
