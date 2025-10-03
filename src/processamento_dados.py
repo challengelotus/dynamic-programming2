@@ -1,5 +1,6 @@
 import json
 import csv
+import os
 from typing import List, Dict, Any, Optional
 
 """
@@ -98,8 +99,7 @@ class Dados:
         dirpath = os_path_dir(path)
         if dirpath:
             try:
-                import os as _os
-                _os.makedirs(dirpath, exist_ok=True)
+                os.makedirs(dirpath, exist_ok=True)
             except Exception:
                 pass
         with open(path, 'w', encoding='utf-8') as file:
@@ -107,7 +107,6 @@ class Dados:
 
 
 def os_path_dir(path: str) -> Optional[str]:
-    import os
     dirpath = os.path.dirname(path)
     return dirpath if dirpath else None
 
